@@ -10,6 +10,12 @@
 <h1 align="center">Hi 👋, I'm Rinat</h1>
 <h3 align="center">A Passionate web developer from Kazakhstan</h3>
 
+### About me
+- 🌱 Now I'm studying **English, as well as programming**. 
+- 📝Passionate about modern technology
+- 📄 Link to my portfolio ([cv-link](https://myportfolio.a07.kz/))
+- 🌍 I speak English
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=07rinat07&label=Profile%20views&color=0e75b6&style=flat" alt="07rinat07" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=07rinat07" alt="07rinat07" /></a> </p>
