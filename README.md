@@ -1,12 +1,6 @@
 # landing_page_html5
 
 
-
-<div align="center">
-  <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="600" height="300"/>
-</div>
-
-
 <h1 align="center">Hi 👋, I'm Rinat</h1>
 <h3 align="center">A Passionate web developer from Kazakhstan</h3>
 
