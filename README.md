@@ -3,15 +3,10 @@
 </div>
 
 
-
-
-### https://07rinat07.github.io/landing_page_html5/
-
-
-
-- 🔭 I’m currently working on [project](https://myportfolio.a07.kz/)
+- https://07rinat07.github.io/landing_page_html5/
 
 - 👨‍💻 All of my projects are available at [https://myportfolio.a07.kz/](https://myportfolio.a07.kz/)
+
 
 
 
