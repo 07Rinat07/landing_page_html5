@@ -2,15 +2,11 @@
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
 </div>
 
-## https://07rinat07.github.io/landing_page_html5/
 
 
 
-### About me
-- 🌱 Now I'm studying **English, as well as programming**. 
-- 📝Passionate about modern technology
-- 📄 Link to my portfolio ([cv-link](https://myportfolio.a07.kz/))
-- 🌍 I speak English
+### https://07rinat07.github.io/landing_page_html5/
+
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=07rinat07&label=Profile%20views&color=0e75b6&style=flat" alt="07rinat07" /> </p>
 
