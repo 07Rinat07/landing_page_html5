@@ -1,8 +1,6 @@
 # landing_page_html5
 
 
-<h1 align="center">Hi 👋, I'm Rinat</h1>
-<h3 align="center">A Passionate web developer from Kazakhstan</h3>
 
 ### About me
 - 🌱 Now I'm studying **English, as well as programming**. 
