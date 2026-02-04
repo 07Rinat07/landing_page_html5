@@ -1,0 +1,128 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-runtime:
+    name: Local Runtime Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Start app and smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run dev > /tmp/local-runtime.log 2>&1 &
+          APP_PID=$!
+
+          cleanup() {
+            kill "$APP_PID" >/dev/null 2>&1 || true
+          }
+          trap cleanup EXIT
+
+          ready=false
+          for _ in {1..60}; do
+            if curl -fsS http://127.0.0.1:5173/ >/dev/null && \
+               curl -fsS http://127.0.0.1:8787/api/health >/dev/null; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$ready" != "true" ]; then
+            echo "Приложение не поднялось в течение таймаута"
+            cat /tmp/local-runtime.log || true
+            exit 1
+          fi
+
+          curl -fsS http://127.0.0.1:5173/ | grep -q "Green Atelier"
+          curl -fsS http://127.0.0.1:8787/api/health | grep -q '"status":"ok"'
+
+  docker-build:
+    name: Docker Build Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        run: docker build -t landing-page-ci:${{ github.sha }} .
+
+      - name: Run container
+        run: |
+          docker run -d \
+            --name landing-page-ci \
+            -e NODE_ENV=production \
+            -e PORT=8080 \
+            -e CAPTCHA_PROVIDER=mock \
+            -e CAPTCHA_MOCK_TOKEN=dev-captcha-pass \
+            -p 18080:8080 \
+            landing-page-ci:${{ github.sha }}
+
+      - name: Smoke test container
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ready=false
+          for _ in {1..60}; do
+            if curl -fsS http://127.0.0.1:18080/api/health >/dev/null; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$ready" != "true" ]; then
+            echo "Контейнер не вышел в состояние ready"
+            docker logs landing-page-ci || true
+            exit 1
+          fi
+
+          curl -fsS http://127.0.0.1:18080/ | grep -q "Green Atelier"
+          curl -fsS http://127.0.0.1:18080/api/health | grep -q '"status":"ok"'
+
+      - name: Container logs on failure
+        if: failure()
+        run: docker logs landing-page-ci || true
+
+      - name: Cleanup container
+        if: always()
+        run: docker rm -f landing-page-ci || true

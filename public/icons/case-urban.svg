@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <path
+    d="M18 102H110"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M30 102V84H78V102"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M30 90H78"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M88 102V78"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M98 102V78"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M77 74C79 65 86 58 94 58C102 58 109 65 111 74"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M44 66H56"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M50 66V54"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+</svg>

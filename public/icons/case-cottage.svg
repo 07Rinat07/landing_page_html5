@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <path
+    d="M20 66L64 30L108 66"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M30 58V102H98V58"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M56 102V78H72V102"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M17 102H42"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M25 102V82"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M16 82C18 74 24 69 31 69C38 69 44 74 46 82"
+    stroke="#ECFFF3"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+</svg>

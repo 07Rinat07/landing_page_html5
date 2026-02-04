@@ -1,0 +1,13 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "ignoreFiles": ["css/**/*.css", "dist/**/*", "node_modules/**/*"],
+  "rules": {
+    "alpha-value-notation": null,
+    "at-rule-empty-line-before": null,
+    "import-notation": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "selector-id-pattern": null,
+    "selector-class-pattern": null,
+    "color-function-notation": "modern"
+  }
+}
